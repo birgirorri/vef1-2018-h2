@@ -10,4 +10,4 @@ export function createElement(el, text) {
     element.appendChild(document.createTextNode(text));
   }
   return element;
-}˙
+}
