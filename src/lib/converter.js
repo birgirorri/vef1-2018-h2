@@ -22,4 +22,4 @@ import { createElement } from './helpers';
 }
  export function generateText() {
   // eitthvað dót
-}˙
+}

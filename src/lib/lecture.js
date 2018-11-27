@@ -24,4 +24,4 @@ export default class Lecture {
       const slug = qs.get('slug');
        this.loadLecture(slug).then(data => console.log(data));
     }
-  }˙
+  }
