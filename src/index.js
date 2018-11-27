@@ -1,4 +1,5 @@
 import List from './lib/list';
+import Lecture from './lib/lecture';
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
@@ -9,6 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lecture.load();
   } else {
     const list = new List();
-    list.load();
+    list.load(); // Loadar main menu fyrir alla fyrirlestrana
   }
 });
