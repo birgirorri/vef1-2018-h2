@@ -36,6 +36,9 @@ iframe {
   @include columns(8);
   margin : auto;
   display: flex;
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+
 }
 
 
@@ -67,4 +70,29 @@ blockquote .quote__attribute {
   @include columns(8);
   margin : auto;
   display: flex;
+  flex-direction: column;
+  padding-left:0px;
+  margin-bottom: 20px;
 }
+
+.lecture .list .list__item{
+  padding: 10px;
+}
+
+.footer{
+  height: 30vh;
+  padding-top: 20px;
+  
+}
+
+.footer :nth-child(n){
+  padding-top:20px;
+  @include columns(3);
+  display: flex;
+  margin:auto;
+  font-family: $font-heading;
+  text-decoration: none;
+  color:black;
+}
+
+
