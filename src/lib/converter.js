@@ -10,14 +10,6 @@ export function generateImage(imagePath, className) {
   return imageElement;
 }
 
-export function generateTitle(title, slug) {
-  const link = document.createElement('a');
-  link.href = `/fyrirlestur.html?slug=${slug}`;
-  const titleEle = createElement('h2', 'title', title);
-  link.appendChild(titleEle);
-  return link;
-}
-
 export function generateQuote(quote) {
   const quoteText = createElement('p', 'quote__data', quote.data);
   const quoteAtt = createElement('i', 'quote__attribute', quote.attribute);

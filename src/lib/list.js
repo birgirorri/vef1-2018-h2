@@ -1,5 +1,5 @@
 import { empty, createElement } from './helpers';
-import { generateImage, generateTitle } from './converter';
+import { generateImage} from './converter';
 import { clear, saveTypes, removeTypes, loadSavedLectures } from './storage';
 
 let htmlGreen = false;
@@ -42,8 +42,12 @@ export default class List {
   }
 
   renderItem(item) {
+    const link = document.createElement('a');
+    link.href = `/fyrirlestur.html?slug=${item.slug}`;
+    this.container.appendChild(link);
+
     const lecturediv = createElement('div', 'fyrirlestur');
-    this.container.appendChild(lecturediv);
+    link.appendChild(lecturediv);
 
     lecturediv.appendChild(generateImage(item.thumbnail));
     const textdiv = createElement('div', 'fyrirlestur__text');
@@ -59,7 +63,7 @@ export default class List {
     const titlediv = createElement('div', 'title');
     titlecatdiv.appendChild(titlediv);
 
-    titlediv.appendChild(generateTitle(item.title, item.slug));
+    titlediv.appendChild(createElement('h2', 'title', item.title));
 
     if (loadSavedLectures().includes(item.title)) {
       textdiv.appendChild(createElement('div', 'check', '\u2713'));

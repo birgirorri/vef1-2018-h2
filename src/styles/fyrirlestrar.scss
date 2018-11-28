@@ -28,23 +28,30 @@
     color: $color-graenn1;
 }
 
-.title {
-    font-size: 32px;
-}
-
-.fyrirlestur{
-
+a{
+    text-decoration: none;
+    color: $color-svartur;
     margin-bottom: 2*$gutter;
 
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 
     @media( min-width: 800px){
         width: 33.333%;
     }
+}
+
+.fyrirlestur{
+
+    width: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+.fyrirlestur:hover > *{
+    background-color: $color-grar3;
 }
 
 .noPhoto {
@@ -52,6 +59,7 @@
         background-color: $color-grar1;
         width: 100%;
         flex: 1 1 auto;
+        transition: background-color 0.3s ease-in-out;
     }
 }
 
@@ -75,8 +83,19 @@
     border-radius: 10px;
     font-size: 24px;
     font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
 }
+
+.flokkar button:hover {
+    background-color: $color-grar3;
+}
+
 .flokkar .green {
+    background-color: $color-graenn1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.flokkar .green:hover {
     background-color: $color-graenn2;
 }
 
@@ -91,22 +110,23 @@
     justify-content: space-between;
 
     padding: $gutter/2;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.fyrirlestur:nth-child(3n+1) {
+a:nth-child(3n+1) {
     @media( min-width: 800px){
     padding-right: 13.333px; 
     }
 }
 
-.fyrirlestur:nth-child(3n+2) {
+a:nth-child(3n+2) {
     @media( min-width: 800px){
     padding-right: 6.667px; 
     padding-left: 6.667px;
     }
 }
 
-.fyrirlestur:nth-child(3n+3) {
+a:nth-child(3n+3) {
     @media( min-width: 800px){
     padding-left: 13.333px; 
     }
@@ -117,11 +137,15 @@
     padding-left: $gutter/2;
 }
 
-.fyrirlestur .fyrirlestur__text a{
+.fyrirlestur .fyrirlestur__text h2{
     text-decoration: none;
     font-weight: bold;
-    color:black;
+    color: $color-svartur;
     font-size:18px;
+}
+
+.fyrirlestur__text .title .title {
+    font-size: 32px;
 }
 
 .thumbnail{
