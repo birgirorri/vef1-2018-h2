@@ -6,7 +6,7 @@ header {
   position: relative;
 }
 
-.header_image{
+.header__image{
   max-height: 40vh;
   overflow: hidden;
   width: 100%;
@@ -26,7 +26,7 @@ header h2 {
   text-transform: uppercase;
 }
 
-.header_title {
+.header__title {
   font-family: $font-heading;
   position: absolute;
   bottom: 35%;
