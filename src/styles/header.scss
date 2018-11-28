@@ -1,5 +1,11 @@
 @import "config";
 
+header {
+  width: 100%;
+  margin-bottom: 2*$gutter;
+  position: relative;
+}
+
 .header_image{
   max-height: 40vh;
   overflow: hidden;
@@ -11,13 +17,15 @@
   width: 100%;
 }
 
+header h1 {
+  font-size: 48px;
+}
+
 header h2 {
   font-size: 16px;
   text-transform: uppercase;
 }
-header h1 {
-  font-size: 48px;
-}
+
 .header_title {
   font-family: $font-heading;
   position: absolute;
@@ -26,4 +34,10 @@ header h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.protection{
+   position: absolute;
+   background-color: rgba(170, 170, 170, 0.9);
+   width: 100%;
 }
