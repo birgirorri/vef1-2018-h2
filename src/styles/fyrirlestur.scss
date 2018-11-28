@@ -1,0 +1,49 @@
+@import "config";
+
+.lecture {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.lecture p {
+  @include columns(8);
+  margin: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 2*$gutter;
+}
+
+iframe {
+  @include columns(8);
+  margin: auto;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  height: 45vh;
+  margin-bottom: 2*$gutter;
+}
+
+.quote {
+  @include columns(8);
+  margin-bottom: 2*$gutter;
+  background-color: $color-grar3;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  margin: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+blockquote .quote__data{
+  padding-top: $gutter;
+  margin:0;
+  width: 100%;
+  
+}
+
+blockquote .quote__attribute {
+  padding-bottom: $gutter;
+  margin:0;
+  width:100%
+}
