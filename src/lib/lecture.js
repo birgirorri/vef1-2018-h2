@@ -120,8 +120,11 @@ export default class Lecture {
             this.container.appendChild(imageText);
             break;
         case 'text':
-            const textEle = createElement('p', 'text', item.data);
-            this.container.appendChild(textEle);
+            const textArray = item.data.split('\n');
+            for (let i in textArray) {  
+              const textEle = createElement('p', 'text', textArray[i]);
+              this.container.appendChild(textEle);
+            }
             break;
         case 'quote':
             const quoteEle = generateQuote(item);
