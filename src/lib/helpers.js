@@ -4,10 +4,12 @@ export function empty(element) {
   }
 }
 
-export function createElement(el, text) {
+export function createElement(el, className) {
   const element = document.createElement(el);
-  if (text) {
-    element.appendChild(document.createTextNode(text));
+  if (className) {
+    console.log("komst");
+    element.classList.add(className);
   }
+  console.log(className);
   return element;
 }

@@ -6,12 +6,9 @@ import { createElement } from './helpers';
 
 export function generateImage(imagePath) {
   if (!imagePath) {
-    const greydiv = document.createElement('div');
-    greydiv.classList.add('greydiv');
-    return greydiv;
-    // Má nota css til að teikna grátt og jafn stórt
+    return document.createElement('div', 'noPhoto');
   }
-  const imageElement = createElement('img');
+  const imageElement = createElement('img', 'photo');
   imageElement.src = `../../${imagePath}`;
   imageElement.classList.add('thumbnail');
   return imageElement;
@@ -21,62 +18,62 @@ export function generateTitle(title, slug) {
   const link = document.createElement('a');
   link.href = `/fyrirlestur.html?slug=${slug}`;
   // slug = linkurinn sem við ætlum að hafa
-  const titleElement = document.createElement('h2');
-  titleElement.appendChild(document.createTextNode(title));
+  const titleEle = document.createElement('h2');
+  titleEle.appendChild(document.createTextNode(title));
 
-  link.appendChild(titleElement);
+  link.appendChild(titleEle);
   return link;
 }
 
 export function generateCategory(category) {
-  const categoryElement = document.createElement('h3');
-  categoryElement.appendChild(document.createTextNode(category));
-  return categoryElement;
+  const categoryEle = document.createElement('h3');
+  categoryEle.appendChild(document.createTextNode(category));
+  return categoryEle;
 }
 
 export function generateText(text) {
-  const textElement = document.createElement('p');
-  textElement.appendChild(document.createTextNode(text));
-  textElement.classList.add('text');
-  return textElement;
+  const textEle = document.createElement('p');
+  textEle.appendChild(document.createTextNode(text));
+  textEle.classList.add('text');
+  return textEle;
 }
 
 export function generateQuote(quote) {
-  const quoteElement = document.createElement('blockquote');
-  quoteElement.classList.add('quote');
+  const quoteEle = document.createElement('blockquote');
+  quoteEle.classList.add('quote');
   const quoteText = generateText(quote.data);
   quoteText.classList.add('quote__data');
-  const quoteAttribute = generateText(quote.attribute);
-  quoteAttribute.classList.add('quote__attribute');
-  quoteElement.appendChild(quoteText);
-  quoteElement.appendChild(quoteAttribute);
-  return quoteElement;
+  const quoteAtt = generateText(quote.attribute);
+  quoteAtt.classList.add('quote__attribute');
+  quoteEle.appendChild(quoteText);
+  quoteEle.appendChild(quoteAtt);
+  return quoteEle;
 }
 
-export function generateHeading(heading, size) {
-  const headingElement = document.createElement(size);
-  headingElement.appendChild(document.createTextNode(heading));
-  return headingElement;
+export function generateHeading(headText, size) {
+  const headingEle = document.createElement(size);
+  headingEle.appendChild(document.createTextNode(headText));
+  return headingEle;
 }
 
-export function generateCode(code) {
-  const preElement = document.createElement('pre');
-  const codeElement = document.createElement('code');
-  codeElement.appendChild(document.createTextNode(code));
-  preElement.appendChild(codeElement);
-  return preElement;
+export function generateCode(codeText) {
+  const preEle = document.createElement('pre');
+  const codeEle = document.createElement('code');
+  codeEle.appendChild(document.createTextNode(codeText));
+  preEle.appendChild(codeEle);
+  return preEle;
 }
 
-export function generateList(listitem) {
-  const listdata = document.createElement('li');
-  listdata.appendChild(document.createTextNode(listitem));
-  return listdata;
+export function generateList(listText) {
+  const liEle = document.createElement('li');
+  liEle.appendChild(document.createTextNode(listText));
+  return liEle;
 }
 
-export function generateYoutube(youtube) {
-  const videoElement = document.createElement('iframe');
-  videoElement.src = youtube;
-  videoElement.frameborder = '0';
-  videoElement.allowfullscreen = '0';
-  return videoElement;
+export function generateYoutube(videoLink) {
+  const videoEle = document.createElement('iframe');
+  videoEle.src = videoLink;
+  videoEle.frameborder = '0';
+  videoEle.allowfullscreen = '0';
+  return videoEle;
 }

@@ -55,37 +55,28 @@ export default class List {
   }
 
   renderItem(item) {
-    const lecturediv = document.createElement('div');
-    lecturediv.classList.add('fyrirlestur');
+    const lecturediv = createElement('div', 'fyrirlestur');
     this.container.appendChild(lecturediv);
-
-    const imageElement = generateImage(item.thumbnail);
-    lecturediv.appendChild(imageElement);
-
-    const textdiv = document.createElement('div');
-    textdiv.classList.add('fyrirlestur__text');
+    
+    lecturediv.appendChild(generateImage(item.thumbnail));
+    const textdiv = createElement('div', 'fyrirlestur__text');
     lecturediv.appendChild(textdiv);
 
-    const titlecatdiv = document.createElement('div');
-    titlecatdiv.classList.add('fyrirlestur__titlecat');
+    const titlecatdiv = createElement('div', 'fyrirlestur__cate');
     textdiv.appendChild(titlecatdiv);
 
-    const categorydiv = document.createElement('div');
-    categorydiv.classList.add('category');
+    const categorydiv = createElement('div', 'category');
     titlecatdiv.appendChild(categorydiv);
-    const categoryElement = generateCategory(item.category);
-    categorydiv.appendChild(categoryElement);
+    categorydiv.appendChild(generateCategory(item.category));
 
-    const titlediv = document.createElement('div');
-    titlediv.classList.add('title');
+    const titlediv = createElement('div', 'title');
     titlecatdiv.appendChild(titlediv);
-    const titleElement = generateTitle(item.title, item.slug);
-    titlediv.appendChild(titleElement);
+
+    titlediv.appendChild(generateTitle(item.title, item.slug));
 
     if (loadSavedLectures().includes(item.title)) {
-      const checkdiv = document.createElement('div');
+      const checkdiv = createElement('div', 'check');
       checkdiv.appendChild(document.createTextNode('\u2713'));
-      checkdiv.classList.add('check');
       textdiv.appendChild(checkdiv);
     }
   }
