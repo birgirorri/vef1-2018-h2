@@ -3,6 +3,7 @@
 .lecture {
   max-width: 1200px;
   margin: auto;
+  
 }
 
 .lecture p {
@@ -23,6 +24,20 @@ iframe {
   height: 45vh;
   margin-bottom: 2*$gutter;
 }
+
+.lecture .img.thumbnail{
+  @include columns(8);
+  margin: auto;
+  padding:2px;
+  display:flex;
+}
+
+.lecture .heading{
+  @include columns(8);
+  margin : auto;
+  display: flex;
+}
+
 
 .quote {
   @include columns(8);
@@ -46,4 +61,10 @@ blockquote .quote__attribute {
   padding-bottom: $gutter;
   margin:0;
   width:100%
+}
+
+.lecture .list{
+  @include columns(8);
+  margin : auto;
+  display: flex;
 }

@@ -6,7 +6,7 @@ import { createElement } from './helpers';
 
 export function generateImage(imagePath, className) {
   if (!imagePath) {
-    return createElement('div', className);
+    return createElement('div', 'noPhoto');
   }
   const imageElement = createElement('img', className);
   imageElement.src = `../../${imagePath}`;

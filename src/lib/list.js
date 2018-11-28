@@ -69,26 +69,36 @@ export default class List {
 
   updateList(e) {
 
+    const htmlbutton = document.querySelector('.flokkar__html');
+    const cssbutton = document.querySelector('.flokkar__css');
+    const jsbutton = document.querySelector('.flokkar__javascript');
+
     switch (e.srcElement.name) {
       case "html":
         if (htmlGreen) {
           htmlGreen = false;
+          htmlbutton.classList.remove('green');
         } else {
           htmlGreen = true;
+          htmlbutton.classList.add('green');
         }
         break;
       case "css":
         if (cssGreen) {
           cssGreen = false;
+          cssbutton.classList.remove('green');
         } else {
           cssGreen = true;
+          cssbutton.classList.add('green');
         }
         break;
       case "js":
         if (jsGreen) {
           jsGreen = false;
+          jsbutton.classList.remove('green');
         } else {
           jsGreen = true;
+          jsbutton.classList.add('green');          
         }
         break;
     }
