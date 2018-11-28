@@ -1,4 +1,4 @@
-import { generateImage, generateText, generateQuote, generateHeading, generateList, generateCode, generateYoutube } from './converter';
+import { generateImage, generateQuote, generateCode, generateYoutube } from './converter';
 import { saveLectures, loadSavedLectures, removeLectures } from './storage';
 import { empty, createElement } from './helpers';
 
@@ -68,10 +68,8 @@ export default class Lecture {
     const slugCategory = slugArray[0];
     const slugTitle = slugArray[1];
     const realTitle = this.findTitle(slugTitle);
-    const title = generateHeading(realTitle, 'h1');
-    title.classList.add('header__h1');
-    const category = generateHeading(slugCategory, 'h2');
-    category.classList.add('header__h2');
+    const title = createElement('h1', 'header__h1', realTitle);
+    const category = createElement('h2', 'header__h2', slugCategory);
 
     const titlediv = document.querySelector('.header__title');
     titlediv.appendChild(category);
@@ -114,48 +112,41 @@ export default class Lecture {
   }
 
   renderItem(item) {
-    if (item.type === 'image') {
-      const imageElement = generateImage(item.data);
-      imageElement.classList.add('img');
-      const imageText = document.createElement('p');
-      imageText.classList.add('image__caption');
-      imageText.appendChild(document.createTextNode(item.caption));
-      this.container.appendChild(imageElement);
-      this.container.appendChild(imageText);
-    }
-    else if (item.type === 'text') {
-      const textElement = generateText(item.data);
-      this.container.appendChild(textElement);
-    }
-    else if (item.type === 'quote') {
-      const quoteElement = generateQuote(item);
-      this.container.appendChild(quoteElement);
-    }
-    else if (item.type === 'heading') {
-      const headingElement = generateHeading(item.data, 'h2');
-      headingElement.classList.add('heading');
-      this.container.appendChild(headingElement);
-    }
-    else if (item.type === 'list') {
-      const listElement = document.createElement('ul');
-      listElement.classList.add('list');
-
-      for (let i = 0; i < item.data.length; i += 1) {
-        const listitem = generateList(item.data[i]);
-        listitem.classList.add('list__tag');
-        listElement.appendChild(listitem);
-        this.container.appendChild(listElement);
-      }
-    }
-    else if (item.type === 'code') {
-      const codeElement = generateCode(item.data);
-      codeElement.classList.add('code');
-      this.container.appendChild(codeElement);
-    }
-    else if (item.type === 'youtube') {
-      const videoElement = generateYoutube(item.data);
-      videoElement.classList.add('youtube');
-      this.container.appendChild(videoElement);
+    switch(item.type) {
+        case 'image': 
+            const imageEle = generateImage(item.data, 'img');
+            const imageText = createElement('p', 'image__caption', item.caption);
+            this.container.appendChild(imageEle);
+            this.container.appendChild(imageText);
+            break;
+        case 'text':
+            const textEle = createElement('p', 'text', item.data);
+            this.container.appendChild(textEle);
+            break;
+        case 'quote':
+            const quoteEle = generateQuote(item);
+            this.container.appendChild(quoteEle);
+            break;
+        case 'heading':
+            const headingEle = createElement('h2', 'heading', item.data);
+            this.container.appendChild(headingEle);
+            break;
+        case 'list':
+            const listEle = createElement('ul', 'list');
+            for (let i = 0; i < item.data.length; i++) {
+                const listitem = createElement('li', 'list__item', item.data[i]);
+                listEle.appendChild(listitem);
+                this.container.appendChild(listEle);
+            }
+            break;
+        case 'cose':
+            const codeEle = generateCode(item.data);
+            this.container.appendChild(codeEle);
+            break;
+        case 'youtube':
+            const videoEle = generateYoutube(item.data);
+            this.container.appendChild(videoEle);
+            break;
     }
   }
 
