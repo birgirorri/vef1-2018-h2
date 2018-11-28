@@ -59,16 +59,16 @@
     display: flex;
 
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: $gutter;
+    padding-right: $gutter;
     max-width: 500px;
     margin:auto;
-    margin-bottom: 40px;
+    margin-bottom: 2*$gutter;
 }
 
 .flokkar button {
     width: auto;
-    padding: 10px;
+    padding: $gutter;
     font-family: $font-heading;
     background-color: $color-grar1;
     border: none;
@@ -114,7 +114,7 @@
 
 .titlecat{
     width: 100%;
-    padding-left: 10px;
+    padding-left: $gutter/2;
 }
 
 .fyrirlestur .fyrirlestur__text a{

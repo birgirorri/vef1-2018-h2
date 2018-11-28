@@ -1,6 +1,6 @@
 import { empty, createElement } from './helpers';
 import { generateImage, generateTitle } from './converter';
-import { clear, saveTypes, removeTypes, loadSavedTypes, loadSavedLectures } from './storage';
+import { clear, saveTypes, removeTypes, loadSavedLectures } from './storage';
 
 let htmlGreen = false;
 let cssGreen = false;

@@ -9,8 +9,8 @@
 .lecture p {
   @include columns(8);
   margin: auto;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: $gutter/4;
+  padding-right: $gutter/4;
   margin-bottom: 2*$gutter;
 }
 
@@ -18,8 +18,8 @@ iframe {
   @include columns(8);
   margin: auto;
   display: flex;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: $gutter/4;
+  padding-right: $gutter/4;
   border: none;
   height: 45vh;
   margin-bottom: 2*$gutter;
@@ -28,7 +28,7 @@ iframe {
 .lecture .img.thumbnail{
   @include columns(8);
   margin: auto;
-  padding:2px;
+  padding:4px;
   display:flex;
 }
 
@@ -43,27 +43,26 @@ iframe {
 
 
 .quote {
-  @include columns(8);
+  width: 69.35%;
   margin-bottom: 2*$gutter;
   background-color: $color-grar3;
   margin-left: -$gutter;
   margin-right: -$gutter;
   margin: auto;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding: $gutter;
+  margin-bottom: 2*$gutter;
 }
 
 blockquote .quote__data{
-  padding-top: $gutter;
   margin:0;
   width: 100%;
+  margin-bottom: $gutter;
   
 }
 
 blockquote .quote__attribute {
-  padding-bottom: $gutter;
   margin:0;
-  width:100%
+  width: 100%;
 }
 
 .lecture .list{
@@ -71,22 +70,28 @@ blockquote .quote__attribute {
   margin : auto;
   display: flex;
   flex-direction: column;
-  padding-left:0px;
-  margin-bottom: 20px;
+  padding-left: 3px;
+  margin-bottom: $gutter;
 }
 
 .lecture .list .list__item{
-  padding: 10px;
+  margin-bottom: $gutter;
 }
 
 .footer{
   height: 30vh;
-  padding-top: 20px;
-  
+  padding-top: $gutter;
+}
+
+pre {
+  width: 66.667%;
+  margin: auto;
+  padding-left: $gutter/4;
+  padding-right: $gutter/4;
 }
 
 .footer :nth-child(n){
-  padding-top:20px;
+  padding-top:$gutter;
   @include columns(3);
   display: flex;
   margin:auto;

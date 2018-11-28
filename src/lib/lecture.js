@@ -1,6 +1,6 @@
 import { generateImage, generateQuote, generateCode, generateYoutube } from './converter';
 import { saveLectures, loadSavedLectures, removeLectures } from './storage';
-import { empty, createElement } from './helpers';
+import { createElement } from './helpers';
 
 export default class Lecture {
   constructor() {
@@ -142,7 +142,7 @@ export default class Lecture {
                 this.container.appendChild(listEle);
             }
             break;
-        case 'cose':
+        case 'code':
             const codeEle = generateCode(item.data);
             this.container.appendChild(codeEle);
             break;

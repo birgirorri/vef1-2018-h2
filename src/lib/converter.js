@@ -1,9 +1,5 @@
 import { createElement } from './helpers';
 
-/**
- * Hér koma föll sem sjá um að búa til element fyrir sérhverja týpu af elementum á síðunni
- */
-
 export function generateImage(imagePath, className) {
   if (!imagePath) {
     return createElement('div', 'noPhoto');
@@ -17,8 +13,6 @@ export function generateImage(imagePath, className) {
 export function generateTitle(title, slug) {
   const link = document.createElement('a');
   link.href = `/fyrirlestur.html?slug=${slug}`;
-  
-  // slug = linkurinn sem við ætlum að hafa
   const titleEle = createElement('h2', 'title', title);
   link.appendChild(titleEle);
   return link;
@@ -26,7 +20,7 @@ export function generateTitle(title, slug) {
 
 export function generateQuote(quote) {
   const quoteText = createElement('p', 'quote__data', quote.data);
-  const quoteAtt = createElement('p', 'quote__attribute', quote.attribute);
+  const quoteAtt = createElement('i', 'quote__attribute', quote.attribute);
 
   const quoteEle = createElement('blockquote', 'quote');
   quoteEle.appendChild(quoteText);
