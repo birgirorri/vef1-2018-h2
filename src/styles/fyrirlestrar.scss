@@ -4,51 +4,117 @@
    flex-wrap: wrap;
 
    max-width: 1200px;
-   margin-top: 20px;
+   margin-top: $gutter;
 
-   @media (max-width: 800px){
-     padding-left: $gutter;
-     padding-right:$gutter;
-   }
+    padding-left: $gutter;
+    padding-right: $gutter;
 
-   @media (min-width:800px){
-        :nth-child(3n-2){
-            margin-left: -10px;
-
-        }
-        
-   }
    margin:auto;
+
+   @media( min-width: 800px){
+        padding-left: 0;
+        padding-right: 0;
+   }
 }
 
+.category__title {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+}
 
+.check {
+    font-size: 48px;
+    color: $color-graenn1;
+}
+
+.title {
+    font-size: 32px;
+}
 
 .fyrirlestur{
 
-    margin-top: 20px;
+    margin-bottom: 2*$gutter;
 
-    @media( max-width: 800px){
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
 
-        @include columns(12);
+    @media( min-width: 800px){
+        width: 33.333%;
     }
+    display: flex;
+    flex-direction: column;
+}
 
-    @media (min-width: 800px){
-
-        @include columns(4);   
+.noPhoto {
+    @media( min-width: 800px){
+        background-color: $color-grar1;
+        width: 100%;
+        flex: 1 1 auto;
     }
+}
+
+.flokkar {
+    display: flex;
+
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 500px;
+    margin:auto;
+    margin-bottom: 40px;
+}
+
+.flokkar button {
+    width: auto;
+    padding: 10px;
+    font-family: $font-heading;
+    background-color: $color-grar1;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.flokkar .green {
+    background-color: $color-graenn2;
 }
 
 .fyrirlestur__text{
     margin-top:-5px;
     font-family: $font-heading;
-    
     background-color: $color-grar1;
     font-size:12px;
     width:100%;
+
+    display:flex;
+    justify-content: space-between;
+
+    padding: $gutter/2;
+}
+
+.fyrirlestur:nth-child(3n+1) {
+    @media( min-width: 800px){
+    padding-right: 13.333px; 
+    }
+}
+
+.fyrirlestur:nth-child(3n+2) {
+    @media( min-width: 800px){
+    padding-right: 6.667px; 
+    padding-left: 6.667px;
+    }
+}
+
+.fyrirlestur:nth-child(3n+3) {
+    @media( min-width: 800px){
+    padding-left: 13.333px; 
+    }
 }
 
 .titlecat{
-    width:100%;
+    width: 100%;
+    padding-left: 10px;
 }
 
 .fyrirlestur .fyrirlestur__text a{
