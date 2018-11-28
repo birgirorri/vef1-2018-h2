@@ -1,0 +1,75 @@
+
+
+.list{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+
+   max-width: 1200px;
+   margin-top: 20px;
+
+   @media (max-width: 800px){
+    //padding-left: $gutter/2;
+    //padding-right:$gutter/2;
+   }
+
+   @media (min-width:800px){
+        :nth-child(3n-2){
+            margin-left: -10px;
+
+        }
+        
+   }
+   margin:auto;
+}
+
+
+
+.fyrirlestur{
+
+    margin-top: 20px;
+
+    @media( max-width: 800px){
+
+        @include columns(12);
+    }
+
+    @media (min-width: 800px){
+
+        @include columns(4);   
+    }
+}
+
+.fyrirlestur__text{
+    margin-top:-5px;
+    font-family: $font-heading;
+    
+    background-color: $color-grar1;
+    font-size:12px;
+    width:100%;
+}
+
+.fyrirlestur__text h3{
+   padding-left:35px;
+}
+
+.title{
+   padding-left: 25px;
+}
+
+.titlecat{
+    width:100%;
+}
+
+.fyrirlestur .fyrirlestur__text a{
+    text-decoration: none;
+    font-weight: bold;
+    color:black;
+    font-size:18px;
+}
+
+.thumbnail{
+    
+    width: 100%;
+    max-height: 100%;
+}
