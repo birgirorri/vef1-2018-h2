@@ -6,6 +6,7 @@ export function generateImage(imagePath, className) {
   }
   const imageElement = createElement('img', className);
   imageElement.src = `${imagePath}`;
+  imageElement.alt = 'img';
   imageElement.classList.add('thumbnail');
   return imageElement;
 }
