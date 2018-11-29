@@ -9,7 +9,7 @@ let jsGreen = false;
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
-    this.url = '../lectures.json';
+    this.url = '../../lectures.json';
   }
 
   loadLectures() {
