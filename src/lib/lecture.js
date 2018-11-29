@@ -5,7 +5,7 @@ import { createElement } from './helpers';
 export default class Lecture {
   constructor() {
     this.container = document.querySelector('.lecture');
-    this.url = '../lectures.json';
+    this.url = 'lectures.json';
     this.header = document.querySelector('.header');
   }
 

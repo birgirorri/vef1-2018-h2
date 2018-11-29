@@ -9,7 +9,7 @@ let jsGreen = false;
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
-    this.url = '../../lectures.json';
+    this.url = 'lectures.json';
   }
 
   loadLectures() {
@@ -43,7 +43,7 @@ export default class List {
 
   renderItem(item) {
     const link = document.createElement('a');
-    link.href = `/fyrirlestur.html?slug=${item.slug}`;
+    link.href = `fyrirlestur.html?slug=${item.slug}`;
     this.container.appendChild(link);
 
     const lecturediv = createElement('div', 'fyrirlestur');

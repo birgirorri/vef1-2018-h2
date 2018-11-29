@@ -5,7 +5,7 @@ export function generateImage(imagePath, className) {
     return createElement('div', 'noPhoto');
   }
   const imageElement = createElement('img', className);
-  imageElement.src = `../../${imagePath}`;
+  imageElement.src = `${imagePath}`;
   imageElement.classList.add('thumbnail');
   return imageElement;
 }
